@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=480 height=800 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=800 height=480 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/build.loader.js";
+      var loaderUrl = buildUrl + "/CJWebPage.loader.js";
       var config = {
-        dataUrl: buildUrl + "/build.data.unityweb",
-        frameworkUrl: buildUrl + "/build.framework.js.unityweb",
-        codeUrl: buildUrl + "/build.wasm.unityweb",
+        dataUrl: buildUrl + "/CJWebPage.data.unityweb",
+        frameworkUrl: buildUrl + "/CJWebPage.framework.js.unityweb",
+        codeUrl: buildUrl + "/CJWebPage.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "mario_project",
@@ -94,8 +94,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "480px";
-        canvas.style.height = "800px";
+        canvas.style.width = "800px";
+        canvas.style.height = "480px";
       }
 
       loadingBar.style.display = "block";
