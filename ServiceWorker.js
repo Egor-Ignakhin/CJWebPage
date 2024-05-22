@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-mario_project-1.0";
 const contentToCache = [
     "Build/CJWebPage.loader.js",
-    "Build/e9620a8614f8fbc755015177dc9e70b7.js.unityweb",
-    "Build/7a2a498dcdeabbcccc5539bcce56b2ef.data.unityweb",
-    "Build/c8bbe91ffa55954e132d6bb0e5040d98.wasm.unityweb",
+    "Build/e9620a8614f8fbc755015177dc9e70b7.js",
+    "Build/1f5b92388609be53b8cebeffb80a8211.data",
+    "Build/c8bbe91ffa55954e132d6bb0e5040d98.wasm",
     "TemplateData/style.css"
 
 ];
