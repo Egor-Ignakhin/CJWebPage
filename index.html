@@ -57,15 +57,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/CJWebPage.loader.js";
+  var loaderUrl = buildUrl + "/8E5M4EOUTHNI2P5.loader.js";
       var config = {
-        dataUrl: buildUrl + "/CJWebPage.data.unityweb",
-        frameworkUrl: buildUrl + "/CJWebPage.framework.js.unityweb",
-        codeUrl: buildUrl + "/CJWebPage.wasm.unityweb",
+          dataUrl: buildUrl + "/8E5M4EOUTHNI2P5.data.unityweb",
+      frameworkUrl: buildUrl + "/8E5M4EOUTHNI2P5.framework.js.unityweb",
+      codeUrl: buildUrl + "/8E5M4EOUTHNI2P5.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "mario_project",
-        productVersion: "1.01",
+        productVersion: "1.02",
         showBanner: unityShowBanner,
       };
 
@@ -98,6 +98,37 @@
         });
       };
       document.body.appendChild(script);
+
+      function isMobile() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Detect iOS devices
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      return true;
+    }
+
+    // Detect Android devices
+    if (/android/i.test(userAgent)) {
+      return true;
+    }
+
+    // Check for other mobile user agents
+    if (/Mobile|mobile|CriOS|Silk|BlackBerry|BB|PlayBook|Opera Mini/i.test(userAgent)) {
+      return true;
+    }
+
+    // Assume everything else is desktop
+    return false;
+  }
+
+  function sendDeviceTypeToUnity() {
+    var isMobileDevice = isMobile();
+    unityInstance.SendMessage('GameManager', 'ReceiveDeviceType', isMobileDevice ? 'mobile' : 'desktop');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    sendDeviceTypeToUnity();
+  });
     </script>
   </body>
 </html>
