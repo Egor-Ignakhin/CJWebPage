@@ -127,7 +127,7 @@
       var isMobileDevice = isMobile();
       unityInstance.SendMessage('GameManager', 'ReceiveDeviceType', isMobileDevice ? 'mobile' : 'desktop');
     }
-
+    unityShowBanner('adfaf', 'warning')
     document.addEventListener('DOMContentLoaded', function () {
       sendDeviceTypeToUnity();
     });
