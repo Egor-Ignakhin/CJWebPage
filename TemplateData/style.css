@@ -7,8 +7,8 @@ body {
     background-color: black;    
 }
 #unity-container { background: black;
-    width: 100vw;
-    aspect-ratio: 16 / 9;
+    width: 100vw; /* Можно поменять на фиксированную ширину, если необходимо */
+    aspect-ratio: 16 / 9; /* Соотношение сторон игры, здесь пример 16:9 */
     display: flex;
     justify-content: center;
     align-items: center;
