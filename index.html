@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="TemplateData/style.css">
   <link rel="manifest" href="manifest.webmanifest">
   <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+
 </head>
 
 <body>
   <div id="unity-container">
     <canvas id="unity-canvas" width=800 height=480 tabindex="-1"></canvas>
     <div id="unity-loading-bar">
-      <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
         <div id="unity-progress-bar-full"></div>
       </div>
@@ -63,15 +63,15 @@
     }
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/F69KQXP2CN1UZ4R.loader.js";
+  var loaderUrl = buildUrl + "/ATT8A3LNDJRGP9A.loader.js";
     var config = {
-      dataUrl: buildUrl + "/F69KQXP2CN1UZ4R.data.unityweb",
-      frameworkUrl: buildUrl + "/F69KQXP2CN1UZ4R.framework.js.unityweb",
-      codeUrl: buildUrl + "/F69KQXP2CN1UZ4R.wasm.unityweb",
+          dataUrl: buildUrl + "/ATT8A3LNDJRGP9A.data.unityweb",
+      frameworkUrl: buildUrl + "/ATT8A3LNDJRGP9A.framework.js.unityweb",
+      codeUrl: buildUrl + "/ATT8A3LNDJRGP9A.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "DefaultCompany",
       productName: "mario_project",
-      productVersion: "1.04",
+  productVersion: "1.07",
       showBanner: unityShowBanner,
     };
 
@@ -88,6 +88,12 @@
       meta.name = 'viewport';
       meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
       document.getElementsByTagName('head')[0].appendChild(meta);
+
+      document.body.classList.remove('desktop-style');
+      document.getElementById('unity-container').classList.remove('desktop-style');
+
+      document.body.classList.add('mobile-style');
+      document.getElementById('unity-container').classList.add('mobile-style');
     }
     else {
       var meta = document.createElement('meta');
@@ -95,6 +101,11 @@
       meta.content = "width=device-width, initial-scale=1.0";
       document.getElementsByTagName('head')[0].appendChild(meta);
 
+      document.body.classList.remove('mobile-style');
+      document.getElementById('unity-container').classList.remove('mobile-style');
+
+      document.body.classList.add('desktop-style');
+      document.getElementById('unity-container').classList.add('desktop-style');
     }
 
     loadingBar.style.display = "block";
@@ -111,37 +122,6 @@
       });
     };
     document.body.appendChild(script);
-
-    function isMobile() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      // Detect iOS devices
-      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return true;
-      }
-
-      // Detect Android devices
-      if (/android/i.test(userAgent)) {
-        return true;
-      }
-
-      // Check for other mobile user agents
-      if (/Mobile|mobile|CriOS|Silk|BlackBerry|BB|PlayBook|Opera Mini/i.test(userAgent)) {
-        return true;
-      }
-
-      // Assume everything else is desktop
-      return false;
-    }
-
-    function sendDeviceTypeToUnity() {
-      var isMobileDevice = isMobile();
-      unityInstance.SendMessage('GameManager', 'ReceiveDeviceType', isMobileDevice ? 'mobile' : 'desktop');
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      sendDeviceTypeToUnity();
-    });
   </script>
 </body>
 

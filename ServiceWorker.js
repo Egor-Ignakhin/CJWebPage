@@ -1,12 +1,13 @@
-const cacheName = "DefaultCompany-mario_project-1.04";
+const cacheName = "DefaultCompany-mario_project-1.07";
 const contentToCache = [
-"Build/F69KQXP2CN1UZ4R.loader.js,",
-"Build/F69KQXP2CN1UZ4R.framework.js.unityweb",
-"Build/F69KQXP2CN1UZ4R.data.unityweb",
-"Build/F69KQXP2CN1UZ4R.wasm.unityweb",
+"Build/ATT8A3LNDJRGP9A.loader.js,",
+"Build/ATT8A3LNDJRGP9A.framework.js.unityweb",
+"Build/ATT8A3LNDJRGP9A.data.unityweb",
+"Build/ATT8A3LNDJRGP9A.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
+
 
 self.addEventListener("install", function (e) {
   console.log("[Service Worker] Install");
